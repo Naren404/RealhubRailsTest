@@ -3,8 +3,6 @@
    campaign_address = order['campaign']['address']
    campaign_suburb = order['campaign']['suburb_name']
    agency_name = order['agency']['title']
-   order_items_id = order['items'][0]['id']
-   order_items_title = order['items'][0]['title']
    order_items = order['items']
 %>
 <div class="order-card">
@@ -22,7 +20,7 @@
             
         %>
             <div class="order-items-name">
-                <%= order_items_title %>
+                <%= order_item["title"] %>
             </div>
             <div class="order-items-actions">
                 <Span class="download-artwork">
@@ -30,9 +28,9 @@
                         <a href="<%= download_url %>">Download Artwork </a> | 
                 <% end %>
                </Span>
-                <form action=<%= "/update_status/#{order_items_id}" %> method="post">
+                <form action=<%= "/update_status/#{order_item["id"]}" %> method="post">
                 <select name="status" onchange="this.form.submit();" class="change-status-dropdown">
-                    <option value=<%= order['status']['title'] %>>Change Status</option>
+                    <option value=<%= order_item["status"]["title"] %>>Change Status</option>
                     <option value="Processing">Processing</option>
                     <option value="Printed">Printed</option>
                     <option value="Packaged">Packaged</option>
@@ -43,7 +41,7 @@
                     <option value="Delivered">Delivered</option>
                     <option value="Declined">Declined</option>
                 </select>
-                    <Span class='order-status <%="#{order['status']['title']}"%>'> | <%= order['status']['title'] %></Span>
+                    <Span class='order-status <%="#{order_item["status"]["title"]}"%>'> | <%= order_item["status"]["title"] %></Span>
                 </form>
             </div>
         <% end %>
