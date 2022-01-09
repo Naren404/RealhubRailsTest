@@ -1,3 +1,68 @@
 // Place all the styles related to the Orders controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+body{
+    margin: 0;
+}
+.order-container{
+    margin: 0 auto;
+    width: 70%;
+}
+.nav-bar{
+    border-bottom: 2px solid rgb(219, 215, 209);
+    padding: 6px;
+    margin-bottom: 32px;
+}
+.nav-bar .title{
+    margin: 0 auto;
+    width: 70%;
+}
+.order-card{
+    border:1px solid rgb(177, 175, 171);
+    margin-bottom: 14px;
+}
+.order-card .agency-name{
+    border-bottom: 1px solid rgb(177, 175, 171);
+    padding:6px;
+}
+.order-card .order-items-container{
+    padding: 6px;
+    display: flex;
+    justify-content: space-between;
+    color:gray;
+    font-size: 12px;
+}
+.order-items-container .order-items-actions{
+    display: flex;
+}
+.order-items-container .download-artwork{
+    font-size: 14px;
+    cursor: pointer;
+}
+.order-items-container .change-status-dropdown{
+    border: none;
+    background: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+.order-status{
+    font-weight: 600;
+}
+.order-status .Pending{
+    color:red;
+}
+.Complete{
+    color: green;
+}
+.Dispatched{
+    color:orangered;
+}
+.Processing{
+    color: yellow;
+}
+.Approved{
+    color: greenyellow;
+}
+.Installed{
+    color: green;
+}
