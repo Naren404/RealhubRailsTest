@@ -1,12 +1,7 @@
-<div class="nav-bar">
-    <div class="title">Orders</div>
-</div>
-<div class="order-container">
-    <section>
-        <div class="order-cards">
-            <% @orders.each do |order| %>
-                <%= render partial:'order_card', locals: {order: order}%>
-            <% end %>
-        </div>
-    </section>
-</div>
+<div id="root"></div>
+<%= content_tag :div,
+    id: "orders_data",
+    data: @orders do %>
+<% end %>
+
+<%= javascript_pack_tag 'index'%>
