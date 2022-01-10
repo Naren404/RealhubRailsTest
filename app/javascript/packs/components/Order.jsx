@@ -2,7 +2,6 @@ import React from 'react';
 import OrderCard from './OrderCard';
 
 const Order = ({orders}) => {
-    console.log(orders)
     return ( 
         <>
             <div className="nav-bar">
